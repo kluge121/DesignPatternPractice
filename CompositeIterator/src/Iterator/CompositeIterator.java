@@ -9,11 +9,10 @@ public class CompositeIterator implements Iterator<EmployeeComponent> {
 
     private Stack<Iterator<EmployeeComponent>> stack = new Stack<>();
 
-
     public CompositeIterator(Iterator<EmployeeComponent> iterator) {
+
         stack.push(iterator);
     }
-
     @Override
     public boolean hasNext() {
         if (stack.empty()) {

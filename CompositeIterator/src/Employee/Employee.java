@@ -68,7 +68,10 @@ public class Employee extends EmployeeComponent {
 
     @Override
     public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
-        employeelist.add(this);
+        if (!employeelist.contains(this)) {
+            employeelist.add(this);
+        }
+
     }
 }
 

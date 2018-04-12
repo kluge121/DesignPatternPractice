@@ -42,9 +42,10 @@ public class Department extends EmployeeComponent {
 
     @Override
     public Iterator<EmployeeComponent> createIterator() {
-        if (iterator == null)
-            iterator = new CompositeIterator(employeeComponents.iterator());
-        return iterator;
+//        if (iterator == null)
+//            iterator = new CompositeIterator(employeeComponents.iterator());
+
+        return new CompositeIterator(employeeComponents.iterator());
     }
 
     public void print() {
@@ -58,6 +59,7 @@ public class Department extends EmployeeComponent {
         }
 
     }
+
     @Override
     public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
         Iterator<EmployeeComponent> iterator = employeeComponents.iterator();

@@ -1,15 +1,16 @@
 package Run;
 
-import Comparator.PostionComparator;
+import Comparator.PositionComparator;
 import Comparator.WorkYearComparator;
 import Employee.EmployeeComponent;
 
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class FilterHelper {
 
     private EmployeeComponent employeeComponent;
-    private LinkedList<EmployeeComponent> employeeObjectsList;
 
     public FilterHelper(EmployeeComponent employeeComponent) {
         this.employeeComponent = employeeComponent;
@@ -20,26 +21,25 @@ public class FilterHelper {
     }
 
 
-    public void positionSort() {
-        employeeObjectsList = new LinkedList<>();
-        employeeComponent.gatherEmployee(employeeObjectsList);
-        employeeObjectsList.sort(new PostionComparator());
+    public void sort(Comparator comparator) {
 
-        for (int i = 0; i < employeeObjectsList.size(); i++) {
-            employeeObjectsList.get(i).print();
+        Iterator<EmployeeComponent> iterator = employeeComponent.createIterator();
+        LinkedList<EmployeeComponent> sortLinkedList = new LinkedList<>();
+
+        while (iterator.hasNext()) {
+            EmployeeComponent employeeComponent = iterator.next();
+            try {
+                employeeComponent.gatherEmployee(sortLinkedList);
+
+            } catch (UnsupportedOperationException ignored) {
+            }
+        }
+        sortLinkedList.sort(comparator);
+        for (EmployeeComponent aSortLinkedList : sortLinkedList) {
+            aSortLinkedList.print();
         }
 
 
-    }
-
-    public void workYearSort() {
-        employeeObjectsList = new LinkedList<>();
-        employeeComponent.gatherEmployee(employeeObjectsList);
-        employeeObjectsList.sort(new WorkYearComparator());
-
-        for (int i = 0; i < employeeObjectsList.size(); i++) {
-            employeeObjectsList.get(i).print();
-        }
     }
 
 

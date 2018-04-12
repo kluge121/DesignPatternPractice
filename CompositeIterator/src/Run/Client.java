@@ -1,5 +1,7 @@
 package Run;
 
+import Comparator.PositionComparator;
+import Comparator.WorkYearComparator;
 import Employee.Department;
 import Employee.Employee;
 import Employee.EmployeeComponent;
@@ -49,11 +51,13 @@ public class Client {
         human2Team.add(new Employee("이대리", DepartmentEnum.HumanResource, PositionEnum.AssitantManager, 5));
 
         FilterHelper filterHelper = new FilterHelper(company);
-//        filterHelper.allEmployeePrinting();
+        filterHelper.allEmployeePrinting();
 
-        filterHelper.workYearSort();
         System.out.println();
-        filterHelper.positionSort();
+
+        filterHelper.sort(new WorkYearComparator());
+        System.out.println();
+        filterHelper.sort(new PositionComparator());
 
     }
 
