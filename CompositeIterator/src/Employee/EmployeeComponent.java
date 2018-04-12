@@ -1,19 +1,33 @@
 package Employee;
 
-import java.util.Iterator;
+import java.util.*;
+
+import Enum.PositionEnum;
+import Enum.DepartmentEnum;
 
 public abstract class EmployeeComponent {
 
+    public void add(EmployeeComponent employeeComponent) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void remove(EmployeeComponent employeeComponent) {
+        throw new UnsupportedOperationException();
+    }
+
+    public EmployeeComponent getChild(int i) {
+        throw new UnsupportedOperationException();
+    }
 
     public String getNmae() {
         throw new UnsupportedOperationException();
     }
 
-    public Enum.DepartmentEnum getDepartment() {
+    public String getDepartment() {
         throw new UnsupportedOperationException();
     }
 
-    public Enum.PositionEnum getPosition() {
+    public PositionEnum getPosition() {
         throw new UnsupportedOperationException();
     }
 
@@ -26,5 +40,10 @@ public abstract class EmployeeComponent {
     public void print() {
         throw new UnsupportedOperationException();
     }
+
+    public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
+        throw new UnsupportedOperationException();
+    }
+
 
 }

@@ -28,7 +28,6 @@ public class CompositeIterator implements Iterator<EmployeeComponent> {
             }
         }
     }
-
     @Override
     public EmployeeComponent next() {
         if (hasNext()) {
@@ -40,4 +39,5 @@ public class CompositeIterator implements Iterator<EmployeeComponent> {
             return null;
         }
     }
+
 }

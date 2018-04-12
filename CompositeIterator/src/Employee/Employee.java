@@ -2,8 +2,10 @@ package Employee;
 
 import Iterator.NullIterator;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
+
+import Enum.PositionEnum;
+import Enum.DepartmentEnum;
 
 public class Employee extends EmployeeComponent {
 
@@ -11,11 +13,11 @@ public class Employee extends EmployeeComponent {
     private ArrayList<EmployeeComponent> employeeComponents = new ArrayList<EmployeeComponent>();
 
     private String name;
-    private Enum.DepartmentEnum department;
-    private Enum.PositionEnum position;
+    private DepartmentEnum department;
+    private PositionEnum position;
     private int workYear;
 
-    public Employee(String name, Enum.DepartmentEnum department, Enum.PositionEnum position, int workYear) {
+    public Employee(String name, DepartmentEnum department, PositionEnum position, int workYear) {
         this.name = name;
         this.department = department;
         this.position = position;
@@ -39,12 +41,12 @@ public class Employee extends EmployeeComponent {
     }
 
     @Override
-    public Enum.DepartmentEnum getDepartment() {
-        return department;
+    public String getDepartment() {
+        return department.toString();
     }
 
     @Override
-    public Enum.PositionEnum getPosition() {
+    public PositionEnum getPosition() {
         return position;
     }
 
@@ -59,14 +61,15 @@ public class Employee extends EmployeeComponent {
         return new NullIterator();
     }
 
+    @Override
     public void print() {
-
-        System.out.print(getName() + " // " + getPosition()+" // " + getWorkYear()+"년");
-
-
-
+        System.out.println(getName() + " // " + getDepartment() + " // " + getPosition() + " // " + getWorkYear() + "년");
     }
 
+    @Override
+    public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
+        employeelist.add(this);
+    }
 }
 
 
