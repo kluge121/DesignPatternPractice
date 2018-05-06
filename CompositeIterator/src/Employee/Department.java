@@ -15,7 +15,6 @@ public class Department extends EmployeeComponent {
     private String name;
     private DepartmentEnum departmentEnum;
 
-    private Iterator<EmployeeComponent> iterator;
     private ArrayList<EmployeeComponent> employeeComponents = new ArrayList<>();
 
     public Department(String name, DepartmentEnum departmentEnum) {
@@ -60,12 +59,27 @@ public class Department extends EmployeeComponent {
 
     }
 
+    //테스트용
     @Override
-    public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
-        Iterator<EmployeeComponent> iterator = employeeComponents.iterator();
-        while (iterator.hasNext()) {
-            EmployeeComponent employeeComponent = iterator.next();
-            employeeComponent.gatherEmployee(employeelist);
-        }
+    public String getNmae() {
+        return name;
+    }
+
+
+    // 여기서는 오버라이드 불필요!
+//    @Override
+//    public void gatherEmployee(LinkedList<EmployeeComponent> employeelist) {
+//        Iterator<EmployeeComponent> iterator = employeeComponents.iterator();
+//        while (iterator.hasNext()) {
+//            EmployeeComponent employeeComponent = iterator.next();
+//            employeeComponent.gatherEmployee(employeelist);
+//        }
+//
+//    }
+
+    public ArrayList<EmployeeComponent> getEmployeeComponents() {
+        return employeeComponents;
     }
 }
+
+

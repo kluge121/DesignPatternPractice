@@ -1,7 +1,7 @@
 package Run;
 
-import Comparator.PositionComparator;
-import Comparator.WorkYearComparator;
+
+import Employee.Employee;
 import Employee.EmployeeComponent;
 
 import java.util.Comparator;
@@ -28,13 +28,21 @@ public class FilterHelper {
 
         while (iterator.hasNext()) {
             EmployeeComponent employeeComponent = iterator.next();
+            System.out.println("반복------------------- " + employeeComponent.getNmae());
+
             try {
-                employeeComponent.gatherEmployee(sortLinkedList);
+                if (employeeComponent instanceof Employee)
+                    employeeComponent.gatherEmployee(sortLinkedList);
 
             } catch (UnsupportedOperationException ignored) {
+
             }
+
         }
         sortLinkedList.sort(comparator);
+
+
+        System.out.println();
         for (EmployeeComponent aSortLinkedList : sortLinkedList) {
             aSortLinkedList.print();
         }

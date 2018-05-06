@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Iterator/Iterator.iml" filepath="$PROJECT_DIR$/Iterator/Iterator.iml" />
       <module fileurl="file://$PROJECT_DIR$/SingletoneTest/SingletoneTest.iml" filepath="$PROJECT_DIR$/SingletoneTest/SingletoneTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SoftwareDesign.iml" filepath="$PROJECT_DIR$/.idea/modules/SoftwareDesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/Strategy/Strategy.iml" />
     </modules>
   </component>
 </project>

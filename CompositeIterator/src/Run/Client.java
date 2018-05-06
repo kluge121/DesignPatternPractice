@@ -51,12 +51,11 @@ public class Client {
         human2Team.add(new Employee("이대리", DepartmentEnum.HumanResource, PositionEnum.AssitantManager, 5));
 
         FilterHelper filterHelper = new FilterHelper(company);
-        filterHelper.allEmployeePrinting();
-
-        System.out.println();
-
-        filterHelper.sort(new WorkYearComparator());
-        System.out.println();
+//        filterHelper.allEmployeePrinting();
+//        System.out.println();
+//
+//        filterHelper.sort(new WorkYearComparator());
+//        System.out.println();
         filterHelper.sort(new PositionComparator());
 
     }
